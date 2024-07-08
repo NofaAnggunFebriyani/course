@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style-formpendaftaran.css"> <!--ini untuk menautkan ke file cssnya-->
+</head>
+<body>
+    <h1>Registration Form</h1> 
+    <p>Please fill out this form with the required information</p>
+    <!-- metode pengiriman data ditentukan oleh atriut method pada elemen form dengan POSt 
+     berarti data dikirmkan dalam body daro HTTp request -->
+    <form action="https://register-demo.freecodecamp.org" method="POST"> <!--method untuk mengirim data dari input ke urlnya menggunakan metode post-->
+        <!-- fielset ini untuk membuat kolom form-->
+        <fieldset>
+            <!-- label untuk menamai fieldset -->
+            <!-- input untuk membuat kotak inputan setela tulisan dalam label -->
+            <!-- for dan id untuk menautkan antara label dan input -->
+            <!--atribut type pada input digunakan untuk memberitahu browser type input apa yang dimasukkan  -->
+            <!-- atribut dengan type submit d -->
+            <!-- atribut type submit pada elemen input digunakan untuk membuat tombol yang ketika di klik akan mengirimkan data formulir ke server untuk diproses -->
+            <!-- atribut required dalam elemen input digunakan agar ketika mengirimkan formulir tanpa mengisi maka akan muncul pesan kesalahan -->
+            <label for="first-name">Enter Your First Name: <input id="first-name" type="text" type="submit" required name="first-name"></label>
+            <label for="last-name">Enter Your Last Name: <input id="last-name" type="text" type="submit" required name="last-name"></label>
+            <label for="email">Enter Your Email: <input id="email" type="email" type="submit" required name="email"></label>
+            <!-- dengan menambahkan atribut minlength dengan nilai 8. Dengan begitu, input yang kurang dari 8 karakter tidak akan dikirimkan. -->
+            <!-- Di atas adalah ekspresi reguler yang cocok dengan delapan atau lebih huruf kecil atau angka 0 hingga 5. -->
+            <label for="password">Create a New Password: <input id="password" type="password" type="submit" pattern="[a-z0-5]{8,}" required name="password"></label>
+        </fieldset> 
+        <fieldset>
+            <!-- type="radio" dalam HTML digunakan untuk membuat tombol radio (radio button).
+            Tombol radio memungkinkan pengguna memilih salah satu opsi dari sekumpulan pilihan. -->
+            <!-- personal dan business digunakan untuk menamai label -->
+            <!-- atribut name dengan value account-type digunakan agar tombol radio hanya dipilih salah satu -->
+            <!-- atribut checked sebagai pilihan default saat halaman dimuat -->
+            <!-- class inline agar text dan inputan berada pada satu garis yang sama -->
+            <legend>Account type (required)</legend>
+            <label for="personal-account"><input type="radio" name="account-type" id="personal-account" checked class="inline">Personal</label>
+            <label for="business-account"><input type="radio" name="account-type" id="business-account" class="inline">Business</label>
+        </fieldset>
+        <fieldset>
+            <!-- atribut file digunakan untuk memungkinkan pengguna memilih file dari sistem mereka dan mengunggahnya ke server -->
+            <label for="profile-picture">Upload a profile picture: <input type="file" id="profile-picture"/ name="file"></label>
+            <!-- min 13 max 120 adalah umur minimal adalah 13 dan maksimalnya adalah 120 -->
+            <label for="age">Input your age (years): <input type="number" min="13" max="120" id="age" name="age"/></label>
+            <!-- Elemen <select> dan <option> di HTML digunakan untuk membuat menu dropdown dalam formulir web. 
+            Menu dropdown memungkinkan pengguna untuk memilih satu atau lebih opsi dari daftar yang telah ditentukan. -->
+            <label for="referrer">How did you hear about us?
+                <select id="referrer" name="referrer">
+                  <option value="">(select one)</option>
+                  <option value="1">freeCodeCamp News</option>
+                  <option value="2">freeCodeCamp YouTube Channel</option>
+                  <option value="3">freeCodeCamp Forum</option>
+                  <option value="4">Other</option>
+                </select>
+            </label>
+            <!-- atribut rows dan cols digunakan dalam elemen <textarea> untuk menentukan ukuran area teks (textarea). 
+            Elemen <textarea> memungkinkan pengguna memasukkan teks multi-baris dalam formulir. -->
+            <!-- atribut placeholer biasanya digunakan untuk memberikan contoh atau petunjuk tentang apa yang seharusnya dimasukkan oleh pengguna. -->
+            <label for="bio">Provide a bio: <textarea id="bio" rows="3" cols="30" placeholder="I like coding on the beach..." name="bio"></textarea></label>
+        </fieldset>
+        <label for="terms-and-conditions"><input id="terms-and-conditions" type="checkbox" required name="terms" class="inline">I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a></label>
+        <input type="submit" value="Submit">
+    </form>   
+</body>
+</html>
+
+
